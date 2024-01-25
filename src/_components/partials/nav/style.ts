@@ -30,6 +30,7 @@ h-full`
 
 export const listStyle = `flex
 text-center
+text-[15px]
 items-center
 justify-center
 wrap
@@ -43,17 +44,8 @@ export const listMenuStyle = listStyle + `
 hover:before:content-['']
 before:content-[none]
 transition-all
-before:h-[0em]
-before:w-full
-before:bg-green-300
-before:opacity-50
-transition 
-    ease-in-out 
-    duration-300
-hover:before:h-[.3em]
-before:absolute
-before:bottom-1
-before:left-0`
+bg-transparent
+`
 
 export const subListStyle = listStyle + `
 text-sm

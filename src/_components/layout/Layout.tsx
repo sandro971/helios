@@ -9,7 +9,7 @@ const Layout:React.FC<PropsWithChildren> = ({children}) => {
         <>
             <Menu />
             <Header></Header>
-            <main>
+            <main className='min-h-full'>
                 {children}
             </main>
             <Footer></Footer>

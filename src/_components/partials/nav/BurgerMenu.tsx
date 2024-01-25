@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faChevronDown, faRemove, faUser } from "@fortawesome/free-solid-svg-icons"
-import { links, burgerLinks } from './links';
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
+import { burgerLinks } from './links';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { MenuProps } from '../../../types/Menu';
 
@@ -29,7 +29,19 @@ const BurgerMenu: React.FC<MenuProps> = ({
 
     return <>
         {burgerMenuSwitchButton && ( 
-            <nav className='bg-orange-50 top-0 pt-32 absolute w-full flex flex-col rounded-[2em] gap-y-10'>
+            <nav className={`
+                bg-orange-50
+                top-0
+                pt-32
+                absolute
+                w-full
+                flex
+                flex-col
+                rounded-[2em]
+                gap-y-10
+                shadow-lg
+                shadow-gray-200
+            `}>
                 <ul className='flex flex-col px-8 '>
                     {burgerLinks.map((link, index) => {
                         return (

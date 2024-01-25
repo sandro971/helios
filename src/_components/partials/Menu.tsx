@@ -1,14 +1,10 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faChevronDown, faRemove, faUser } from "@fortawesome/free-solid-svg-icons"
-import { links, burgerLinks } from './nav/links';
 import BurgerMenu from './nav/BurgerMenu';
 import DesktopMenu from './nav/DesktopMenu';
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 
-const Nav: React.FC<any> = (props) => {
+const Menu: React.FC<any> = (props) => {
     const [menuDisplay, setMenuDisplay] = useState<Record<string, string>>({
         'Nos offres': 'hidden',
         'Notre impact': 'hidden',
@@ -36,7 +32,7 @@ const Nav: React.FC<any> = (props) => {
       
     return (
         <menu className='w-full flex justify-center p-4 pt-3 fixed'>
-            <div className='flex flex-col justify-center relative w-full'>
+            <div className='flex flex-col justify-center relative w-full max-w-[115em]'>
                 {/* desktop menu */}
                 <DesktopMenu {...menuProps} />
                 {/* burger menu */}
@@ -46,4 +42,4 @@ const Nav: React.FC<any> = (props) => {
     )
 }
 
-export default Nav
+export default Menu

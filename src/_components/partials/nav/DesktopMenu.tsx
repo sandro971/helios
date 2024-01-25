@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faChevronDown, faRemove, faUser } from "@fortawesome/free-solid-svg-icons"
-import { links, burgerLinks } from './links';
+import { faChevronDown, faUser } from "@fortawesome/free-solid-svg-icons"
+import { links } from './links';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { MenuProps } from '../../../types/Menu';
 
@@ -34,7 +34,7 @@ const DesktopMenu: React.FC<MenuProps> = ({
       
     {/* desktop menu */}
     return (
-        <nav className='flex w-full gap-12 pl-8 h-16 items-center justify-between border-green-950 border-[.15em] rounded-full mb-3 shadow-lg shadow-gray-200 box-shadow-[0 4px 8px 0 rgba(0, 0, 0, 0.08)] z-10 bg-white'>
+        <nav className='flex w-full gap-12 pl-8 h-[3.8em] items-center justify-between border-green-950 border-[.15em] rounded-full mb-3 bg-white z-10'>
             {/* logo */}
             <Link to={'/'} className="text-green-950 font-['pt-serif-bold'] text-3xl">
                 helios
@@ -47,6 +47,9 @@ const DesktopMenu: React.FC<MenuProps> = ({
                             className={link.sublinks? listMenuStyle: listStyle}
                             onMouseEnter={onMouseEnterHandler}
                             data-menu={link.name}
+                            style={(link.sublinks && menuDisplay[link.name] != 'hidden')? {
+                                'backgroundImage': 'linear-gradient(180deg, rgba(0,0,0,0) 65%, rgba(181,244,212,1) 65%)'
+                            }:{}}
                         >
                             <Link 
                                 to={link.path} 
