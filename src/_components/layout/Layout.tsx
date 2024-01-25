@@ -7,7 +7,9 @@ const Layout:React.FC<PropsWithChildren> = ({children}) => {
     return (
         <>
             <Header></Header>
-            {children}
+            <main>
+                {children}
+            </main>
             <Footer></Footer>
         </>
     )

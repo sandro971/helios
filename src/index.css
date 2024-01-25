@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'pt-serif-bold';
+    src: url('./fonts/PTSerif-Bold.ttf') format('truetype');
+    
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pt-serif-bolditalic';
+    src: url('./fonts/PTSerif-BoldItalic.ttf') format('truetype');
+    
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pt-serif-italic';
+    src: url('./fonts/PTSerif-Italic.ttf') format('truetype');
+    
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pt-serif-regular';
+    src: url('./fonts/PTSerif-Regular.ttf') format('truetype');
+    
+    font-weight: 300;
+    font-style: normal;
+}
