@@ -124,8 +124,6 @@ export const burgerLinks = [
     {
         name: 'Les projets financés',
         path: '/projets-finances',
-        sublinks: [
-        ]
     },
     {
         name: 'Simulateur d\'empreinte carbone bancaire',
