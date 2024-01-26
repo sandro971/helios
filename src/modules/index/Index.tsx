@@ -14,9 +14,9 @@ const Index: React.FC<any> = (props) => {
     return (
         <Layout>
             <section className='flex h-[100vh] min-h-[48em] justify-center items-center max-lg:flex-col max-lg:h-[auto]'>
-                <div className='flex w-[70%] h-full justify-center items-center max-lg:w-full'>
+                <div className='flex w-[70%] lg:w-full h-full justify-center items-center max-lg:h-[40em] max-lg:mt-[10em]'>
                     <div className='flex flex-col max-w-[36em] w-full text-center gap-y-3'>
-                        <h1 className='text-[2.4em] font-[pt-serif-regular] tracking-wide
+                        <h1 className='text-[2.4em] font-[pt-serif-regular] tracking-wide max-lg:text-3xl
                         '>{t('index.section1.title')}
                             <span className='font-bold'
                                 style={{
