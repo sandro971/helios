@@ -1,13 +1,35 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'pt-serif-bold';
+    src: url('./fonts/PTSerif-Bold.ttf') format('truetype');
+    
+    font-weight: 300;
+    font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+    font-family: 'pt-serif-bolditalic';
+    src: url('./fonts/PTSerif-BoldItalic.ttf') format('truetype');
+    
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pt-serif-italic';
+    src: url('./fonts/PTSerif-Italic.ttf') format('truetype');
+    
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pt-serif-regular';
+    src: url('./fonts/PTSerif-Regular.ttf') format('truetype');
+    
+    font-weight: 300;
+    font-style: normal;
 }
