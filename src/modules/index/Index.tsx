@@ -1,99 +1,56 @@
 import React, { useState } from 'react';
 import Layout from '../../_components/layout/Layout';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
-
-const section1List = [
-    {
-        title: 'Des offres simples, utiles, transparentes et complètes',
-        icon: faCheckCircle
-    },
-    {
-        title: 'Des comptes engagés au service de la transition écologique',
-        icon: faCheckCircle
-    },
-    {
-        title: 'Une inscription rapide et sécurisée, toujours sans engagement',
-        icon: faCheckCircle
-    },
-    {
-        title: 'Des clients satisfaits et fiers d\'être chez Helios',
-        icon: faCheckCircle
-    }
-]
-
-
-const witnessList = [
-    {
-        alt: 'Moralscore',
-        img: 'https://www.helios.do/assets/images/Moralscore.svg',
-        text: 'n°1/24'
-    },
-    {
-        alt: 'Trustpilot',
-        img: 'https://www.helios.do/assets/images/Trustpilot.svg',
-        text: '4,4/5'
-    },
-    {
-        alt: 'Intercom',
-        img: 'https://www.helios.do/assets/images/Intercom.svg',
-        text: 'noté 97,4%'
-    
-    }
-]
+import Form from './Form';
+import { section1List, witnessList } from './lists';
+import { t } from 'i18next';
 
 
 const Index: React.FC<any> = (props) => {
+    const _witnessList = witnessList.map((i:any, index: number)=>({
+        ...i,
+        value : ['1/24', '4.4/5', '97.4'][index]
+    }))
       
     return (
         <Layout>
-            <section className='flex h-[100vh] justify-center items-center'>
-                <div className='flex w-[70%] h-full justify-center items-center'>
-                    <div className='flex flex-col max-w-[35em] w-full text-center gap-y-3'>
-                        <h1 className='text-4xl'>Engagez-vous au quotidien 
+            <section className='flex h-[100vh] min-h-[48em] justify-center items-center max-lg:flex-col max-lg:h-[auto]'>
+                <div className='flex w-[70%] h-full justify-center items-center max-lg:w-full'>
+                    <div className='flex flex-col max-w-[36em] w-full text-center gap-y-3'>
+                        <h1 className='text-[2.4em] font-[pt-serif-regular] tracking-wide
+                        '>{t('index.section1.title')}
                             <span className='font-bold'
                                 style={{
                                     'backgroundImage': 'linear-gradient(180deg, rgba(0,0,0,0) 65%, rgba(181,244,212,1) 65%)'
-                                }}> avec nos comptes éthiques 
+                                }}> {t('index.section1.title-part2')}
                             </span>
                         </h1>
 
                         <ul className='flex flex-col gap-5 p-5'>
-                            {section1List.map((i:any)=><li className="flex gap-3 items-center">
+                            {section1List.map((i:any, index:number)=><li className="flex gap-3 items-center">
                                 <img 
                                     src="https://www.helios.do/assets/images/Check.svg" alt="" 
                                     className='w-7 h-7'
                                 />
-                                <span>{i.title}</span>
+                                <span>{t('index.section1.list1.'+index)}</span>
                             </li>)}
                         </ul>
 
-                        <form action="">
-                            <div className='p-2 border-2 border-black rounded-full flex'>
-                                <input type="text" 
-                                    placeholder='Votre email'
-                                    className='border-none outline-none w-full pl-5'
-                                />
-                                <button
-                                    className='bg-green-200 text-gray-950 rounded-full px-7 py-2 flex-wrap whitespace-nowrap'
-                                >OUVRIR UN COMPTE</button>
-                            </div>
-                        </form>
+                        <Form />
 
                         <div className='py-10 px-10'>
                             <ul className='flex gap-5 justify-between'>
-                                {witnessList.map((i)=><li className='flex flex-col gap-2'>
+                                {_witnessList.map((i)=><li className='flex flex-col gap-2'>
                                     <img src={i.img} 
                                         alt={i.alt}
                                         className=' h-7'
                                     />
-                                    <span>{i.text}</span>
+                                    <span>{t('index.section1.list2.'+ i.alt, {value: i.value})}</span>
                                 </li>)}
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div className='max-w-[30%] h-full w-full'>
+                <div className='max-w-[30%] h-full w-full max-lg:max-w-full max-lg:h-[30em]'>
                     <img src="https://www.helios.do/assets/images/carte_cafe_2504.webp" alt="" 
                         className='w-full h-full object-cover object-center '
                     />

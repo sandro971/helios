@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { MenuProps } from '../../../types/Menu';
 
 import { listStyle, listMenuStyle, beforeStyle, subListStyle, linkStyle } from './style';
+import { t } from 'i18next';
 
 
 const DesktopMenu: React.FC<MenuProps> = ({
@@ -41,7 +42,7 @@ const DesktopMenu: React.FC<MenuProps> = ({
             </Link>
 
             <ul className='flex text-md gap-4 items-center justify-between w-full max-lg:hidden'>
-                {links.map((link, index) => {
+                {links.map((link, index:number) => {
                     return (
                         <li key={index} 
                             className={link.sublinks? listMenuStyle: listStyle}
@@ -55,7 +56,7 @@ const DesktopMenu: React.FC<MenuProps> = ({
                                 to={link.path} 
                                 className={link.sublinks ? beforeStyle : ''}
                             >
-                                {link.name}
+                                {t('menu.'+index)}
 
                                 {link.sublinks && (
                                     <FontAwesomeIcon 
@@ -76,11 +77,11 @@ const DesktopMenu: React.FC<MenuProps> = ({
                                     data-menu={link.name}
                                 >
                                     <ul className={'flex flex-col gap-6 text-sm items-center justify-center '}>
-                                        {link.sublinks.map((sublink, index) => {
+                                        {link.sublinks.map((sublink, index2) => {
                                             return (
-                                                <li key={index} className={subListStyle}>
+                                                <li key={index2} className={subListStyle}>
                                                     <Link to={sublink.path} className='' >
-                                                        {sublink.name}
+                                                        {t(`sublinks${index}.${index2}`)}
                                                     </Link>
                                                 </li>
                                             )
@@ -96,10 +97,10 @@ const DesktopMenu: React.FC<MenuProps> = ({
             <div className='flex items-center h-full'>
                 <Link to={'/connexion'} className={'bg-yellow-50 max-2xl:hidden ' + linkStyle}>
                     <FontAwesomeIcon icon={faUser} className='mr-2' />
-                    <span>ESPACE CLIENT</span>
+                    <span>{t('menu.5')}</span>
                 </Link>
                 <Link to={'/ouvrir-un-compte'} className={'bg-green-200 rounded-r-full max-2xl:h-11 ' + linkStyle}>
-                    <span>OUVRIR UN COMPTE</span>
+                    <span>{t('menu.6')}</span>
                 </Link>
 
                 {/* burger menu */}
