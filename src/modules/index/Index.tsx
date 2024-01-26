@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Layout from '../../_components/layout/Layout';
 import Form from './Form';
 import { section1List, witnessList } from './lists';

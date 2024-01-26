@@ -32,8 +32,7 @@ const DesktopMenu: React.FC<MenuProps> = ({
         })
     }
 
-      
-    {/* desktop menu */}
+    /* desktop menu */
     return (
         <nav className='flex w-full gap-12 pl-8 h-[3.8em] items-center justify-between border-green-950 border-[.15em] rounded-full mb-3 bg-white z-10'>
             {/* logo */}
@@ -48,7 +47,7 @@ const DesktopMenu: React.FC<MenuProps> = ({
                             className={link.sublinks? listMenuStyle: listStyle}
                             onMouseEnter={onMouseEnterHandler}
                             data-menu={link.name}
-                            style={(link.sublinks && menuDisplay[link.name] != 'hidden')? {
+                            style={(link.sublinks && menuDisplay[link.name] !== 'hidden')? {
                                 'backgroundImage': 'linear-gradient(180deg, rgba(0,0,0,0) 65%, rgba(181,244,212,1) 65%)'
                             }:{}}
                         >
