@@ -20,14 +20,17 @@ export const witnessList = [
     {
         alt: 'Moralscore',
         img: 'https://www.helios.do/assets/images/Moralscore.svg',
+        value: '1/24',
     },
     {
         alt: 'Trustpilot',
         img: 'https://www.helios.do/assets/images/Trustpilot.svg',
+        value: '4.4',
     },
     {
         alt: 'Intercom',
         img: 'https://www.helios.do/assets/images/Intercom.svg',
+        value: '97.4',
     }
 ]
 

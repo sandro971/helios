@@ -6,10 +6,6 @@ import { t } from 'i18next';
 
 
 const Index: React.FC<any> = (props) => {
-    const _witnessList = witnessList.map((i:any, index: number)=>({
-        ...i,
-        value : ['1/24', '4.4/5', '97.4'][index]
-    }))
       
     return (
         <Layout>
@@ -39,7 +35,7 @@ const Index: React.FC<any> = (props) => {
 
                         <div className='py-10 px-10'>
                             <ul className='flex gap-5 justify-between'>
-                                {_witnessList.map((i)=><li className='flex flex-col gap-2'>
+                                {witnessList.map((i)=><li className='flex flex-col gap-2'>
                                     <img src={i.img} 
                                         alt={i.alt}
                                         className=' h-7'
